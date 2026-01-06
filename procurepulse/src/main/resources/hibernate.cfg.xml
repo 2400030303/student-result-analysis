@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "https://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- 1) JDBC Driver -->
+        <property name="hibernate.connection.driver_class">
+            com.mysql.cj.jdbc.Driver
+        </property>
+
+        <!-- 2) Database URL -->
+        <property name="hibernate.connection.url">
+            jdbc:mysql://localhost:3306/procurepulse?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC
+        </property>
+
+        <!-- 3) DB Credentials -->
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">2007</property>
+
+        <!-- 4) Dialect -->
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.MySQLDialect
+        </property>
+
+        <!-- 5) SQL Logging -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- 6) DDL Strategy (IMPORTANT CHANGE) -->
+        <!-- validate = Hibernate will NOT change tables -->
+        <property name="hibernate.hbm2ddl.auto">validate</property>
+
+        <!-- 7) Entity Mappings -->
+        <!-- Entity mappings -->
+
+<mapping class="com.demo.entity.Department"/>
+<mapping class="com.demo.entity.Employee"/>
+<mapping class="com.demo.entity.Vendor"/>
+<mapping class="com.demo.entity.Invoice"/>
+<mapping class="com.demo.entity.InvoiceLine"/>
+<mapping class="com.demo.entity.Payment"/>
+<mapping class="com.demo.entity.AuditLog"/>
+
+
+        
+
+        
+    </session-factory>
+</hibernate-configuration>
